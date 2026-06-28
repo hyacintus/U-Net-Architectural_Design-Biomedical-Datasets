@@ -37,7 +37,7 @@ Please download the following datasets from Kaggle and place them in a folder of
 MRI brain scans in TIFF format with binary segmentation masks (tumor vs. background). Images are 512×512 with 3 channels. The script loads up to `MAX_IMAGES` samples, normalizes pixel values, and splits the dataset into train/validation/test sets.
 
 ### CBIS-DDSM-H — `unet_segmentation_breast.py`
-Mammography images in TIFF format (grayscale, 1024×1024) with binary lesion masks. Due to the large image size, this script uses a **sliding-window patch extraction** strategy: each image is divided into 128×128 patches with 50% overlap. CLAHE contrast enhancement is applied before training. Patches are filtered to retain those with sufficient lesion content.
+Mammography images in TIFF format (grayscale, 1024×1024) with binary lesion masks. The script loads up to MAX_IMAGES samples (dataset total: 3032). Due to the large image size, this script uses a sliding-window patch extraction strategy: each image is divided into 128×128 patches with 50% overlap. CLAHE contrast enhancement is applied before training. Patches are filtered to retain those with sufficient lesion content.
 
 ### ISIC-2017-H — `unet_segmentation_skin.py`
 Dermoscopy images in JPG format with PNG binary segmentation masks (skin lesion vs. background). Images are resized to 512×512 with 3 channels. The script loads up to `MAX_IMAGES` samples and normalizes pixel values to [0, 1].
